@@ -70,18 +70,35 @@
 
 <body>
     {% include "navbar.html" %}
-    <section class="py-1 fr-page">
-        <div class="row mt-5">
-            <div class="col-md-7 offset-lg-2">
-                <h1 class="fr-title">Registration</h1>
-                <div class="recognizing-message" id="recognizingMessage">Recognizing...</div>
-                <img src="{{ url_for('video_feed') }}" class="fr-video" alt="Face Recognition Video Feed">
-                <div class="person-name" id="personName">Persons: </div>
-                
-               
-            </div>
+   <section class="py-1 fr-page">
+    <div class="row mt-5">
+        <div class="col-md-7 offset-lg-2">
+            <h1 class="fr-title">Registration</h1>
+            <div class="recognizing-message" id="recognizingMessage">Recognizing...</div>
+            <img src="{{ url_for('video_feed') }}" class="fr-video" alt="Face Recognition Video Feed">
+            <div class="person-name" id="personName">Person: Unknown</div>
         </div>
-    </section>
+    </div>
+</section>
+
+<script>
+    // Use WebSocket to update the person's name dynamically
+    var socket = new WebSocket('wss://your-render-app.onrender.com');  // Replace with your Render app URL
+
+    socket.addEventListener('message', function (event) {
+        var personNameElement = document.getElementById('personName');
+        var recognizingMessageElement = document.getElementById('recognizingMessage');
+
+        if (event.data === 'Recognizing...') {
+            recognizingMessageElement.textContent = 'Recognizing...';
+            personNameElement.textContent = 'Person: Unknown';
+        } else {
+            recognizingMessageElement.textContent = 'Recognition Complete';
+            personNameElement.textContent = 'Person: ' + event.data;
+        }
+    });
+</script>
+
     
        
 </body>

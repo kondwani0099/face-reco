@@ -1,0 +1,59 @@
+<section class="py-1 add-personnel-page">
+    <div class="row mt-5">
+        <div class="col-lg-8 offset-lg-2">
+            <h3 class="add-personnel-title">Train Your Face</h3>
+            <hr>
+            <form class="add-personnel-form" method="post" action="/addprsn_submit">
+                <div class="form-group row">
+                    <label for="txtnbr" class="col-sm-2 col-form-label">NRC</label>
+                    <div class="col-sm-2">
+                        <input type="text" class="form-control" id="txtnbr" name="txtnbr" required>
+                    </div>
+                    <!-- <label for="splash" class="col-sm-2 col-form-label">Splash</label> -->
+                    <div class="col-sm-2">
+                        <input type="text" class="form-control" id="splash" name="splash">
+                    </div>
+
+                    <div class="col-sm-2">
+                        <input type="text" class="form-control" id="splash" name="splash">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="txtsurname" class="col-sm-2 col-form-label">Surname</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" id="txtsurname" name="txtsurname" placeholder="Doe" required>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="txtfname" class="col-sm-2 col-form-label">First Name</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" id="txtfname"  placeholder="John" name="txtfname" required>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="txtemail" class="col-sm-2 col-form-label">Email</label>
+                    <div class="col-sm-8">
+                        <input type="email" class="form-control" id="txtemail" name="txtemail" placeholder="email@example.com" required>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="optskill" class="col-sm-2 col-form-label">Department</label>
+                    <div class="col-sm-4">
+                        <select class="form-control" name="optskill" id="optskill">
+                            <option value="App Developer">App Developer</option>
+                            <option value="Mechatronics">Accountants</option>
+                            <option value="Computer Science">Computer Science</option>
+                            <option value="Web Developer">Web Developer</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group row add-personnel-button">
+                    <div class="col-sm-8 offset-sm-2">
+                        <input type="submit" class="btn btn-primary btn-lg" value="Next">
+                        <a href="/" type="button" class="btn btn-warning btn-lg"><b>Back</b></a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>

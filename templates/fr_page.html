@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% include "head.html" %}
+    <style>
+        /* Add your custom CSS styles here */
+        .fr-page {
+            background-color: #f5f5f5;
+            /* Change to your preferred background color */
+            padding: 20px;
+            text-align: center;
+        }
+
+        .fr-title {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .fr-video {
+            width: 100%;
+            max-width: 800px;
+            display: block;
+            margin: 0 auto;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .log {
+            background-color: #f9f9f9;
+            /* Table background color */
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            text-align: left;
+            font-size: 16px;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        .log table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .log th,
+        .log td {
+            padding: 8px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .log th {
+            background-color: #007bff;
+            /* Table header background color */
+            color: white;
+        }
+
+        .log th:first-child,
+        .log td:first-child {
+            width: 20%;
+            /* Adjust the width as needed */
+        }
+
+        .log th:last-child,
+        .log td:last-child {
+            width: 30%;
+            /* <a href="/" class="btn btn-primary mt-3">Back to Home</a>*/
+        }
+    </style>
+</head>
+
+<body>
+    {% include "navbar.html" %}
+    <section class="py-1 fr-page">
+        <div class="row mt-5">
+            <div class="col-md-7 offset-lg-2">
+                <h1 class="fr-title">Registration</h1>
+                <div class="recognizing-message" id="recognizingMessage">Recognizing...</div>
+                <img src="{{ url_for('video_feed') }}" class="fr-video" alt="Face Recognition Video Feed">
+                <div class="person-name" id="personName">Persons: </div>
+                
+               
+            </div>
+        </div>
+    </section>
+    
+       
+</body>
+
+</html>

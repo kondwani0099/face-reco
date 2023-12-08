@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include "head.html" %}
+    <style>
+        /* Add your custom CSS styles here */
+        .responsive-table {
+            overflow-x: auto;
+            max-width: 120%;
+        }
+    </style>
+</head>
+<body class="bg-home">
+
+{% include "navbar.html" %}
+
+<section class="py-1">
+    <div class="container mt-5">
+        <h3 class="text-center">Admin Panel</h3>
+        <hr>
+
+        <div class="mt-4 responsive-table">
+            <table class="table table-bordered table-striped">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Hash Key</th>
+                        <th>Previous Hash Key</th>
+                        <th>NRC</th>
+                        <th>Name</th>
+                        <th>Skill</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in admin_data %}
+                        <tr>
+                            <td>{{ item[0] }}</td>
+                            <td>{{ item[1] }}</td>
+                            <td>{{ item[2] }}</td>
+                            <td>{{ item[3] }}</td>
+                            <td>{{ item[4] }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+</body>
+</html>

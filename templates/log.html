@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include "head.html" %}
+    <style>
+        /* Add your custom CSS styles here */
+        .fr-page {
+            background-color: #f5f5f5;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .fr-content {
+            text-align: center;
+            width: 70%; /* Adjust the width as needed */
+        }
+        .fr-log {
+            width: 30%; /* Adjust the width as needed */
+            padding: 20px;
+            background-color: white;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        .fr-title {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .fr-video {
+            width: 100%;
+            max-width: 800px;
+            display: block;
+            margin: 0 auto;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+        .recognizing-message {
+            display: none;
+            font-size: 18px;
+            color: #007bff;
+        }
+        .log {
+            text-align: left;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    {% include "navbar.html" %}
+    <section class="py-1 fr-page">
+        <div class="fr-content">
+            <div class="row mt-5">
+                <div class="col-md-7 offset-lg-2">
+                    <h1 class="fr-title">Registration</h1>
+                    <div class="recognizing-message" id="recognizingMessage">Recognizing...</div>
+                    <img src="{{ url_for('video_feed') }}" class="fr-video" alt="Face Recognition Video Feed">
+                </div>
+            </div>
+        </div>
+        <div class="fr-log">
+            <h2>Recognition Log</h2>
+            <ul class="log" id="recognitionLog">
+                <!-- Dynamic content for recognition log will be added here -->
+            </ul>
+        </div>
+    </section>
+    
+    <script>
+        // JavaScript code to show/hide the "Recognizing..." message
+        const recognizingMessage = document.getElementById('recognizingMessage');
+
+        function showRecognizingMessage() {
+            recognizingMessage.style.display = 'block';
+        }
+
+        function hideRecognizingMessage() {
+            recognizingMessage.style.display = 'none';
+        }
+
+        showRecognizingMessage();
+        setTimeout(hideRecognizingMessage, 3000);
+
+        // Function to add a recognized person to the log
+        function addRecognitionToLog(id, name) {
+            const logList = document.getElementById('recognitionLog');
+            const listItem = document.createElement('li');
+            listItem.textContent = `Person ID: ${id}, Name: ${name}`;
+            logList.appendChild(listItem);
+        }
+
+        // Replace personIds with the actual person IDs when you have detected persons
+        const personIds = [42, 55, 78];
+        personIds.forEach(id => fetchPersonName(id));
+    </script>
+</body>
+</html>

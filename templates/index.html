@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include "head.html" %}
+</head>
+<body class="bg-home">
+
+{% include "navbar.html" %}
+
+<section class="py-1">
+    <div class="container mt-5"> <!-- Use a container for consistent layout -->
+        <h3 class="text-center">Registration System</h3>
+        <hr>
+
+        <div class="row">
+            <div class="col-lg-4 mb-3">
+                <a href="/addprsn" class="btn btn-primary btn-lg btn-block">Train</a>
+            </div>
+
+            <div class="col-lg-4 offset-lg-4 mb-3">
+                <a href="/fr_page" class="btn btn-info btn-lg btn-block">Register</a>
+            </div>
+        </div>
+
+        <div class="mt-4">
+            <table class="table table-bordered table-striped"> <!-- Add table styles -->
+                <thead class="thead-dark">
+                    <tr>
+                        <th>NRC</th>
+                        <th>Name</th>
+                        <th>Dept</th>
+                        <th>Active</th>
+                        <th>Added</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in data %}
+                        <tr>
+                            <td>{{ item[0] }}</td>
+                            <td>{{ item[1] }}</td>
+                            <td>{{ item[2] }}</td>
+                            <td>{{ item[3] }}</td>
+                            <td>{{ item[4] }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+{% include "footer.html" %}
+</body>
+</html>

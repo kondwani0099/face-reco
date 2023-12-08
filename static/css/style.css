@@ -1,0 +1,81 @@
+.fr-video{
+    width: 100%;
+    max-width: 800px;
+    display: block;
+    margin: 0 auto;
+    border: 1px solid #007bff; /* Border color changed to blue */
+    border-radius: 10px; /* Increased border radius for a rounded look */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Add a subtle box shadow */
+
+}
+
+
+/*Background for home page */
+.bg-home{
+     background: linear-gradient(to bottom, var(--primary-color), #f9f9f9);
+}
+
+
+/* Color Variables */
+:root {
+    --primary-color: #fc7914;
+    --background-color: #f9f9f9;
+    --buttons:#0d114f;
+}
+.text-center{
+ 
+    color: white;
+}
+/* Gradient Background for Navigation */
+.bg-nav {
+    background: var(--primary-color); /* Use color variables */
+    /* ... (existing gradient styles) */
+}
+
+/* Margins and Spacing */
+.mt-100 {
+    margin-top: 100px;
+}
+
+/* Typography */
+body {
+    font-family: Arial, sans-serif; /* Define your preferred font stack */
+    font-size: 16px;
+}
+
+h1, h2, h3 {
+    color: var(--primary-color); /* Use color variables for headings */
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: var(--buttons);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-secondary {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Form Styles */
+input[type="text"], input[type="email"], select {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Responsive Design (Adjust as needed) */
+@media (max-width: 768px) {
+    /* Define styles for smaller screens */
+}

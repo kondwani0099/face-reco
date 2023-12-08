@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include "head.html" %}
+</head>
+<body class="bg-about">
+
+{% include "navbar.html" %}
+
+<section class="py-5">
+    <div class="container mt-5">
+        <div class="row">
+            <!-- Container with Image -->
+            <div class="col-lg-6 mb-4">
+                <img src="{{ url_for('static', filename='img/probase.png') }}" class="img-fluid" alt="About Image">
+            </div>
+
+            <!-- Container with About Us Information -->
+            <div class="col-lg-6 mb-4">
+                <h3 class="text-center" style="color: black;">About Us</h3>
+                <hr>
+
+                <p>
+                    Welcome to our Facial Recognition System at Probase! We are dedicated to providing advanced and secure
+                    solutions for identity verification and access control. Our system utilizes state-of-the-art facial recognition
+                    technology to ensure accuracy and reliability in recognizing individuals.
+                </p>
+
+                <p>
+                    Whether you are here to add new data or explore the capabilities of our system, we strive to make the
+                    registration process seamless and the recognition system efficient.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% include "footer.html" %}
+</body>
+</html>

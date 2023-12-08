@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include "head.html" %}
+</head>
+<body class="bg-home">
+
+{% include "navbar.html" %}
+
+<section class="py-1">
+    <div class="container mt-5">
+        <h3 class="text-center">Admin Panel</h3>
+        <hr>
+
+        <div class="mt-4">
+            <table class="table table-bordered table-striped">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Name</th>
+                        <th>Total Hours</th>
+                        <th>Days Attended</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in admin_data %}
+                        <tr>
+                            <td>{{ item[0] }}</td>
+                            <td>{{ item[1] }}</td>
+                            <td>{{ item[2] }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+</body>
+</html>

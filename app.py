@@ -37,7 +37,7 @@ def face_recognition():
 
     faceCascade = cv2.CascadeClassifier("resources/haarcascade_frontalface_default.xml")
 
-    cap = cv2.VideoCapture(0)  # Open the default camera (you may need to adjust the camera index)
+    cap = cv2.VideoCapture(1)  # Open the default camera (you may need to adjust the camera index)
 
     while True:
         ret, img = cap.read()
@@ -60,7 +60,7 @@ def video_feed():
     # Video streaming route.
     return Response(face_recognition(), mimetype='multipart/x-mixed-replace; boundary=frame')
 
-@app.route('/fr_page')
+@app.route('/')
 def fr_page():
     """Video streaming home page."""
     return render_template('fr_page.html')  # You can create an HTML template for your page

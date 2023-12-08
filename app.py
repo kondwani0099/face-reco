@@ -37,7 +37,7 @@ def face_recognition():
 
     faceCascade = cv2.CascadeClassifier("resources/haarcascade_frontalface_default.xml")
 
-    cap = cv2.VideoCapture(1)  # Open the default camera (you may need to adjust the camera index)
+    cap = cv2.VideoCapture(0)  # Open the default camera (you may need to adjust the camera index)
 
     while True:
         ret, img = cap.read()

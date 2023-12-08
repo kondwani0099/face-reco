@@ -83,7 +83,7 @@
 
 <script>
     // Use WebSocket to update the person's name dynamically
-    var socket = new WebSocket('https://face-reco-ceee.onrender.com/');  // Replace with your Render app URL
+    var socket = new WebSocket('wss://face-reco-ceee.onrender.com/');  // Replace with your Render app URL
 
     socket.addEventListener('message', function (event) {
         var personNameElement = document.getElementById('personName');

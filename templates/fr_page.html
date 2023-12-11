@@ -81,7 +81,7 @@
     </div>
 </section>
 
-<script>
+<!-- <script>
     // Use WebSocket to update the person's name dynamically
     var socket = new WebSocket('wss://face-reco-ceee.onrender.com/');  // Replace with your Render app URL
 
@@ -97,11 +97,45 @@
             personNameElement.textContent = 'Person: ' + event.data;
         }
     });
-</script>
+</script> -->
     <script src="dependency.js"></script>
 <script src="socket-script.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.1.2/socket.io.js"></script>
 <script src="socket-script.js"></script>
+    <script>
+    // Establish a WebSocket connection
+    var socket = new WebSocket('ws://172.232.21.252:5000');  // Use ws:// for plain WebSocket
+
+    // Event listener for when the WebSocket connection is opened
+    socket.addEventListener('open', function (event) {
+        console.log('WebSocket connection opened');
+    });
+
+    // Event listener for WebSocket messages
+    socket.addEventListener('message', function (event) {
+        var personNameElement = document.getElementById('personName');
+        var recognizingMessageElement = document.getElementById('recognizingMessage');
+
+        if (event.data === 'Recognizing...') {
+            recognizingMessageElement.textContent = 'Recognizing...';
+            personNameElement.textContent = 'Person: Unknown';
+        } else {
+            recognizingMessageElement.textContent = 'Recognition Complete';
+            personNameElement.textContent = 'Person: ' + event.data;
+        }
+    });
+
+    // Event listener for when the WebSocket connection is closed
+    socket.addEventListener('close', function (event) {
+        console.log('WebSocket connection closed');
+    });
+
+    // Event listener for WebSocket errors
+    socket.addEventListener('error', function (event) {
+        console.error('WebSocket error:', event);
+    });
+</script>
+
 
 
     
